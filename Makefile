@@ -2,7 +2,7 @@ SHELL = /bin/bash
 
 .PHONY: test
 test:
-	FLASK_DEBUG=1 BROWSER=none ./run.sh
+	FLASK_DEBUG=1 BROWSER=none ./dlthing.sh
 
 .PHONY: requirements-debian
 requirements-debian:

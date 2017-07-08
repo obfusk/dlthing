@@ -1,4 +1,16 @@
-# Licence: GPLv3+
+#!/usr/bin/env python3
+
+# --                                                            ; {{{1
+#
+# File        : dlthing.py
+# Maintainer  : Felix C. Stegerman <flx@obfusk.net>
+# Date        : 2017-07-08
+#
+# Copyright   : Copyright (C) 2017  Felix C. Stegerman
+# Version     : v0.0.1
+# License     : GPLv3+
+#
+# --                                                            ; }}}1
 
 from flask import Flask, render_template, request
 import youtube_dl
@@ -23,3 +35,11 @@ def get_video_url(url):
       message = "not a valid URL" if "not a valid URL" in e.args[0] \
                 else "download error"
     return dict(vid_url = vid_url, message = message)
+
+if __name__ == "__main__":
+  import os
+  host = os.environ.get("HOST", "127.0.0.1")
+  port = os.environ.get("PORT", "8888")
+  app.run(host = host, port = int(port))
+
+# vim: set tw=70 sw=2 sts=2 et fdm=marker :
