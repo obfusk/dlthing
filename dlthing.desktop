@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=DL thing
+Exec=bash -c 'cd "$(dirname "$1")"; ./run.sh' _ %k
+Icon=terminal
+Terminal=true
+StartupNotify=false
+Type=Application

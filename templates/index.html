@@ -1,0 +1,20 @@
+<!doctype html>
+<title>DL thing</title>
+<style> .container { text-align: center; } </style>
+<div class="container">
+  <h1>DL thing</h1>
+  {% if message %}
+    <h2>{{ message }}</h2>
+  {% elif vid_url %}
+    <video src="{{ vid_url }}"
+      controls {{ "autoplay" if play else "" }} ></video>
+  {% else %}
+    <form action="/" method="post">
+      <label for="url">URL</label>
+      <input type="text" id="url" name="url" />
+      <label for="play">play</label>
+      <input type="checkbox" id="play" name="play" checked />
+      <input type="submit" value="Go!" />
+    </form>
+  {% endif %}
+</div>
